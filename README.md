@@ -14,7 +14,6 @@ OpenAI Movie Recommender is an intelligent movie recommendation application that
 
 <video width="600" controls>
   <source src="demo.webm" type="video/webm">
-  Your browser does not support the video tag.
 </video>
 
 ## Installation
