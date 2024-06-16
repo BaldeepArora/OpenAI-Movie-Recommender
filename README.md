@@ -10,6 +10,12 @@ OpenAI Movie Recommender is an intelligent movie recommendation application that
 - **Interactive Frontend**: Powered by Streamlit, the app offers a responsive and interactive user interface.
 - **API Integration**: Seamlessly fetch movie data and posters using the TMDB API.
 
+## Demo
+
+<video width="600" controls>
+  <source src="demo.mp4" type="video/webm">
+</video>
+
 ## Installation
 
 1. Clone the repository:
