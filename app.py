@@ -48,7 +48,7 @@ def create_placeholder_image(width, height):
     return placeholder
 
 # Function to get recommendations
-def get_recommendations(prompt, n=5):
+def get_recommendations(prompt, n=10):
     response = openai.Embedding.create(
         input=prompt,
         model="text-embedding-ada-002"
@@ -65,15 +65,19 @@ st.title('Movie Recommendation System with OpenAI Embeddings')
 
 user_input = st.text_input('Hello there! What would you like to watch?:')
 
+
 if user_input:
     recommendations = get_recommendations(user_input)
-    st.write('Top 5 recommended movies:')
+    st.write('Top 10 recommended movies:')
 
-    # Creating a number of columns equal to the number of recommendations
-    cols = st.columns(min(len(recommendations), 5))
+    # Split recommendations into two rows
+    first_row_recommendations = recommendations[:5]
+    second_row_recommendations = recommendations[5:]
 
-    for index, (row_index, row) in enumerate(recommendations.iterrows()):
-        with cols[index]:
+    # First row of recommendations
+    first_row_cols = st.columns(5)
+    for index, (row_index, row) in enumerate(first_row_recommendations.iterrows()):
+        with first_row_cols[index]:
             poster_url = get_movie_poster(row['id'])
             if poster_url:
                 response = requests.get(poster_url)
@@ -81,9 +85,27 @@ if user_input:
                     img = Image.open(BytesIO(response.content))
                     st.image(img, width=150)
                 except Exception as e:
-                    st.image(create_placeholder_image(150, 225), width=150)  # Placeholder size kept is 150x225
+                    st.image(create_placeholder_image(150, 225), width=150)  # Placeholder size is 150x225
                     st.write("Poster not available.")
             else:
-                st.image(create_placeholder_image(150, 225), width=150)  # Placeholder size kept is 150x225
+                st.image(create_placeholder_image(150, 225), width=150)  # Placeholder size is 150x225
+                st.write("Poster not available.")
+            st.markdown(f"<div style='text-align: center; font-size: large;'>{row['original_title']}</div>", unsafe_allow_html=True)
+
+    # Second row of recommendations
+    second_row_cols = st.columns(5)
+    for index, (row_index, row) in enumerate(second_row_recommendations.iterrows()):
+        with second_row_cols[index]:
+            poster_url = get_movie_poster(row['id'])
+            if poster_url:
+                response = requests.get(poster_url)
+                try:
+                    img = Image.open(BytesIO(response.content))
+                    st.image(img, width=150)
+                except Exception as e:
+                    st.image(create_placeholder_image(150, 225), width=150)  # Placeholder size is 150x225
+                    st.write("Poster not available.")
+            else:
+                st.image(create_placeholder_image(150, 225), width=150)  # Placeholder size is 150x225
                 st.write("Poster not available.")
             st.markdown(f"<div style='text-align: center; font-size: large;'>{row['original_title']}</div>", unsafe_allow_html=True)
