@@ -78,7 +78,7 @@ You can see the app in action in the video below:
 
 You can also access the deployed version of this app on Streamlit Cloud:
 
-[Deployed App](https://share.streamlit.io/your-username/movie-recommendation-app/main/app.py)
+[Deployed App](https://openai-movie-recommender-zg5ah67y9xe8fqywptstbq.streamlit.app/)
 
 ## Files
 
