@@ -85,9 +85,8 @@ OpenAI Movie Recommender is an intelligent movie recommendation application that
 
 ## Demo
 
-Check out the demo video to see the app in action:
-
-[![OpenAI Movie Recommender Demo](https://img.youtube.com/vi/your-video-id/0.jpg)](https://www.youtube.com/watch?v=your-video-id)
-
-*(Replace the placeholder with your actual video URL)*
+<video width="600" controls>
+  <source src="demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
