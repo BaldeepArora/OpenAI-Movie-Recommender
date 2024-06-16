@@ -12,6 +12,7 @@ OpenAI Movie Recommender is an intelligent movie recommendation application that
 
 ## Demo
 
+You can see the app in action in the video below:
 <video width="600" controls>
   <source src="demo.mp4" type="video/webm">
 </video>
@@ -73,6 +74,12 @@ OpenAI Movie Recommender is an intelligent movie recommendation application that
 
 2. Open your web browser and go to `http://localhost:8501` to use the app.
 
+## Deployed Version
+
+You can also access the deployed version of this app on Streamlit Cloud:
+
+[Deployed App]([https://share.streamlit.io/your-username/movie-recommendation-app/main/app.py])
+
 ## Files
 
 - `app.py`: The main Streamlit app script.
@@ -81,9 +88,7 @@ OpenAI Movie Recommender is an intelligent movie recommendation application that
 - `.env`: File containing API keys (not included in the repository).
 - `.gitignore`: File specifying files to be ignored by Git.
 - `tmdb_5000_credits.csv` and `tmdb_5000_movies.csv`: Datasets used for the project.
-- `movies_with_embeddings.pkl`: Preprocessed data with embeddings (not included in the repository).
-
-## Demo
+- `movies_with_embeddings.pkl`: Preprocessed data with embeddings.
 
 <video width="600" controls>
   <source src="demo.mp4" type="video/mp4">
