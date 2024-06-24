@@ -14,7 +14,7 @@ OpenAI Movie Recommender is an intelligent movie recommendation application that
 
 You can see the app in action in the video below:
 <video width="600" controls>
-  <source src="demo.mp4" type="video/webm">
+  <source src="demo.mp4" type="video/mp4">
 </video>
 
 ## Installation
